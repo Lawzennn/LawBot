@@ -9,6 +9,7 @@ var prefix = ("/");
     console.log("Je suis connecté !");
 });
 
+client.login(process.env.BOT_TOKEN)
 
 bot.on('message', message => {
     if (message.content === '/ping'){
@@ -80,5 +81,3 @@ bot.on('message', message => {
                   }
             
     });
-
-client.login(process.env.BOT_TOKEN)
