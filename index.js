@@ -10,7 +10,7 @@ var prefix = ("/");
 });
 
 
-bot.login(process.env.BOTDISCORD_TOKEN);
+bot.login(process.env.BOT_TOKEN);
 
 bot.on('message', message => {
     if (message.content === '/ping'){
@@ -21,10 +21,11 @@ bot.on('message', message => {
 
   if (message.content === prefix + "help"){
       var help_embed = new Discord.RichEmbed()
-          .setColor('#f0a530')
+          .setColor('#ff8888')
           .addField("Commande de Respect des règles - ", "  -/commande : Affiche les commandes du bot !\n-/Ban @pseudo SOON *\n-/tempban @pseudo SOON * \n-/kick @pseudo SOON* \n-/mute @pseudo SOON * \n-/tempmute @pseudo SOON *")
           .addField("Interaction - ", "  -/ping le bot te repond pong !\n-/salut le bot te repond ça va ?")
           .addField("Information - ", "  -/discord\n-/support\n-/version\n-/language")
+          .addField("Couleurs - ", "  -Les couleurs disponible pour vous etre attribuer en faisant /couleur (couleur)\n@Red @Cyant @Blue @Violet @Pink @Yellow @Orange @Grey @Black @White")
           .setFooter("Bot Programmé par Lawzenn")
       message.channel.sendEmbed(help_embed);
       //message.channel.sendMessage("Voici les commandes du bot :\n -/help pour afficher les commandes");
