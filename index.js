@@ -10,7 +10,7 @@ var prefix = ("/");
 });
 
 
-bot.login(process.env.BOT_TOKEN);
+bot.login(process.env.BOTDISCORD_TOKEN);
 
 bot.on('message', message => {
     if (message.content === '/ping'){
