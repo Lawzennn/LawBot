@@ -149,6 +149,8 @@ if (message.content === prefix + "help"){
       //message.channel.sendMessage("Voici les commandes du bot :\n -/help pour afficher les commandes");
       console.log("Commande Help demandé !");
     }
+});
+
 
      // Purge
     if (msg.startsWith(prefix + 'PURGE')) { // This time we have to use startsWith, since we will be adding a number to the end of the command.
