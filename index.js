@@ -29,7 +29,7 @@ bot.on("message", async message => {
     if(!kUser) return message.channel.send("Nomme un utilisateur avec une mention (@)");
     let kReason = args.join(" ").slice(22);
     if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("No can do pal!");
-    if(kUser.hasPermission("MANAGE_MESSAGES")) return message.channel.send("That person can't be kicked!");
+    if(kUser.hasPermission("MANAGE_MESSAGES")) return message.channel.send("Cette personne ne peut pas etre kick !");
 
     let kickEmbed = new Discord.RichEmbed()
     .setDescription("Kick")
@@ -60,11 +60,11 @@ bot.on("message", async message => {
     let banEmbed = new Discord.RichEmbed()
     .setDescription("Ban")
     .setColor("#bc0000")
-    .addField("Banned User", `${bUser} with ID ${bUser.id}`)
-    .addField("Banned By", `<@${message.author.id}> with ID ${message.author.id}`)
-    .addField("Banned In", message.channel)
-    .addField("Time", message.createdAt)
-    .addField("Reason", bReason);
+    .addField("User Ban", `${bUser} with ID ${bUser.id}`)
+    .addField("Bannie par", `<@${message.author.id}> with ID ${message.author.id}`)
+    .addField("Bannie dans", message.channel)
+    .addField("Temps", message.createdAt)
+    .addField("Raison", bReason);
 
     let incidentchannel = message.guild.channels.find(`name`, "incidents");
     if(!incidentchannel) return message.channel.send("Can't find incidents channel.");
@@ -82,17 +82,17 @@ bot.on("message", async message => {
     //!report @ned this is the reason
 
     let rUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
-    if(!rUser) return message.channel.send("Couldn't find user.");
+    if(!rUser) return message.channel.send("Nomme un utilisateur avec une mention (@)");
     let rreason = args.join(" ").slice(22);
 
     let reportEmbed = new Discord.RichEmbed()
-    .setDescription("Reports")
+    .setDescription("Report")
     .setColor("#15f153")
-    .addField("Reported User", `${rUser} with ID: ${rUser.id}`)
-    .addField("Reported By", `${message.author} with ID: ${message.author.id}`)
+    .addField("Reporte User", `${rUser} with ID: ${rUser.id}`)
+    .addField("Report par ", `${message.author} with ID: ${message.author.id}`)
     .addField("Channel", message.channel)
-    .addField("Time", message.createdAt)
-    .addField("Reason", rreason);
+    .addField("Temps", message.createdAt)
+    .addField("Raison", rreason);
 
     let reportschannel = message.guild.channels.find(`name`, "reports");
     if(!reportschannel) return message.channel.send("Couldn't find reports channel.");
