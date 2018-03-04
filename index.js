@@ -82,7 +82,7 @@ bot.on("message", async message => {
     //!report @ned this is the reason
 
     let rUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
-    if(!rUser) return message.channel.send("Il a été report !");
+    if(!rUser) return message.channel.send("Nomme un utilisateur avec une mention (@)");
     let rreason = args.join(" ").slice(22);
 
     let reportEmbed = new Discord.RichEmbed()
