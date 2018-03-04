@@ -14,7 +14,7 @@ bot.login(process.env.BOTDISCORD_TOKEN);
 
 bot.on('message', message => {
     if (message.content === '/couleur'){
-        message.reply("Voici les couleurs :\n@Red @Cyant @Blue @Violet @Pink @Yellow @Orange @Grey @Black @White");
+        message.reply("Voici les couleurs :@Red @Cyant @Blue @Violet @Pink @Yellow @Orange @Grey @Black @White");
         console.log('ping pong')
 };
 
